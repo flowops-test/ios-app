@@ -1,0 +1,9 @@
+name: Integration
+on: [push]
+jobs:
+  integration:
+    runs-on: macos-12-core
+    steps:
+      - uses: actions/checkout@v4
+      - run: xcrun simctl list
+      - run: ./run-integration.sh
